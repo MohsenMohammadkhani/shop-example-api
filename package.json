@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "scripts": {
+        "swagger-build": "node  ./storage/api-docs/index.js"
+    }
+}

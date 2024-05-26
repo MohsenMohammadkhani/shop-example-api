@@ -1,0 +1,159 @@
+{
+    "paths": {
+        "/api/v1/dashboard/auth/role?page={page}": {
+            "get": {
+                "tags": ["Role"],
+                "summary": "get role paginate",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page in pagination",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "roles": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/dashboard/auth/role/{roleID}": {
+            "get": {
+                "tags": ["Role"],
+                "summary": "get permission with permission ID",
+                "parameters": [
+                    {
+                        "name": "roleID",
+                        "in": "path",
+                        "description": "permission ID is optional",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Role"],
+                "summary": "edit permission with data",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "permission name",
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "persian_name": {
+                                    "type": "string"
+                                },
+                                "permissions_ids": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "example": {
+                            "name": "name",
+                            "persian_name": "persian_name",
+                            "permissions_ids": "1,2,3,4"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {}
+                }
+            },
+            "delete": {
+                "tags": ["Role"],
+                "summary": "delete role with data",
+                "parameters": [
+                    {
+                        "name": "roleID",
+                        "in": "path",
+                        "description": "role ID is",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {}
+                }
+            }
+        },
+        "/api/v1/dashboard/auth/role": {
+            "post": {
+                "tags": ["Role"],
+                "summary": "add permission with data",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "permission name",
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "persian_name": {
+                                    "type": "string"
+                                },
+                                "permissions_ids": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "example": {
+                            "name": "name",
+                            "persian_name": "persian_name",
+                            "permissions_ids": "1,2,3,4"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

@@ -1,0 +1,27 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "My Shop Project API",
+        "description": "This is description My Project Application API",
+        "version": "1.0.0"
+    },
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "host": "localhost:8000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "API for auth users in the system"
+        },
+        {
+            "name": "Permission",
+            "description": "API for permission users in the system"
+        },
+        {
+            "name": "Role",
+            "description": "API for role users in the system"
+        }
+    ]
+}
