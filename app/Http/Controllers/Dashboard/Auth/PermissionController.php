@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard\Auth;
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\Auth\permission\AddPermissionRequest;
 use App\Http\Requests\Auth\permission\EditPermissionRequest;
-use App\Http\Resources\auth\PermissionResourceCollection;
+use App\Http\Resources\Dashboard\auth\PermissionResourceCollection;
 use App\Models\Permission;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

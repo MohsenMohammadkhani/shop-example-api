@@ -18,6 +18,7 @@ class PermissionMiddleware
     public function handle(Request $request, Closure $next, string $permissionName)
     {
         try {
+          
             if (!$request->header('Authorization')) {
                 return response()->json([
                     'message' => __('auth.authorization_is_not_exist_on_request_header'),

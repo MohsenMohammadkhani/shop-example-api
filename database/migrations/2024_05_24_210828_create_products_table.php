@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('title', 70);
             $table->string('slug', 40)->unique();
             $table->integer('price');
+            $table->boolean('is_exist');
+            $table->text('description')->fullText();
             $table->timestamps();
         });
     }

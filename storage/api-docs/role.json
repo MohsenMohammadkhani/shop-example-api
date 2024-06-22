@@ -6,8 +6,18 @@
                 "summary": "get role paginate",
                 "parameters": [
                     {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "description": "token JWT in pagination ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "page",
                         "in": "query",
+                        "required": true,
                         "description": "page in pagination",
                         "schema": {
                             "type": "integer"
@@ -36,8 +46,18 @@
                 "summary": "get permission with permission ID",
                 "parameters": [
                     {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "description": "token JWT in pagination ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "roleID",
                         "in": "path",
+                        "required": true,
                         "description": "permission ID is optional",
                         "schema": {
                             "type": "integer"
@@ -64,7 +84,26 @@
                 "summary": "edit permission with data",
                 "parameters": [
                     {
-                        "name": "name",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "description": "token JWT in pagination ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "roleID",
+                        "in": "path",
+                        "required": true,
+                        "description": "permission ID is optional",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "role data",
+                        "required": true,
                         "in": "body",
                         "description": "permission name",
                         "schema": {
@@ -96,8 +135,18 @@
                 "summary": "delete role with data",
                 "parameters": [
                     {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "description": "token JWT in pagination ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "roleID",
                         "in": "path",
+                        "required": true,
                         "description": "role ID is",
                         "schema": {
                             "type": "integer"
@@ -115,8 +164,18 @@
                 "summary": "add permission with data",
                 "parameters": [
                     {
-                        "name": "name",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "description": "token JWT in pagination ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "role data",
                         "in": "body",
+                        "required": true,
                         "description": "permission name",
                         "schema": {
                             "properties": {

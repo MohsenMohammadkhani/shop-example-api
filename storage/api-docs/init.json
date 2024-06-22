@@ -13,15 +13,19 @@
     "tags": [
         {
             "name": "Auth",
-            "description": "API for auth users in the system"
+            "description": "API for auth dashboard users in the system"
         },
         {
             "name": "Permission",
-            "description": "API for permission users in the system"
+            "description": "API for permission dashboard users in the system"
         },
         {
             "name": "Role",
-            "description": "API for role users in the system"
+            "description": "API for role dashboard users in the system"
+        },
+        {
+            "name": "Product",
+            "description": "API for products dashboard in the system"
         }
     ]
 }

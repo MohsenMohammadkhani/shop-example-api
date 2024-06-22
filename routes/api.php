@@ -1,7 +1,5 @@
 <?php
 
-use App\Services\Auth\JWTToken;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
- 
+
 Route::prefix('v1')->group(function () {
 
     Route::prefix("dashboard")->namespace("Dashboard")->group(function () {
@@ -32,5 +30,11 @@ Route::prefix('v1')->group(function () {
         });
 
         Route::resource("product", "ProductController")->middleware('permission:manage-products');
+    });
+
+    Route::prefix("shop")->namespace("Shop")->group(function () {
+        Route::get("/products", "ProductController@getListProduct");
+        Route::get("/products/all-products-slug", "ProductController@getAllProductSlug");
+        Route::get("/products/{slug}", "ProductController@show");
     });
 });

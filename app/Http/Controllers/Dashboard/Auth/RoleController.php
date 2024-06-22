@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Dashboard\Auth;
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\Auth\role\AddRoleRequest;
 use App\Http\Requests\Auth\role\EditRoleRequest;
-use App\Http\Requests\Auth\role\SetPermissionsToRole;
-use App\Http\Resources\auth\RoleResourceCollection;
+use App\Http\Resources\Dashboard\auth\RoleResourceCollection;
 use App\Models\Role;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -22,7 +21,6 @@ class RoleController extends BaseController
     {
         try {
             $roles = $this->getRolesPaginate($request);
-           
             return $this->showResponse([
                 'success' => true,
                 'roles' => $roles->response()->getData(true)

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\auth;
+namespace App\Http\Resources\Dashboard\auth;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 

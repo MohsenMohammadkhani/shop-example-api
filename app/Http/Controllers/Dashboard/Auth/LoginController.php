@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Dashboard\Auth;
 
 use App\Http\Controllers\BaseController;
-use App\Http\Requests\Auth\LoginWithSmsCodeRequest;
-use App\Http\Requests\Auth\SendSmsCodeForLoginRequest;
+use App\Http\Requests\Dashboard\Auth\LoginWithSmsCodeRequest;
+use App\Http\Requests\Dashboard\Auth\SendSmsCodeForLoginRequest;
 use App\Services\Auth\Login\LoginUserWithSmsCodeMobile;
 
 class LoginController extends BaseController
