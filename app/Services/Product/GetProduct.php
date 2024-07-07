@@ -14,13 +14,16 @@ class GetProduct
         $this->productsImagesInstance = new ProductsImages();
     }
 
-    public function getListProduct()
+    public function getListProduct($request)
     {
-        return Product::select('id', 'title', 'slug', 'price')->paginate(10)->through(function ($product) {
+        $queryString = collect($request->query());
+        return Product::filterByQueryStringShopPageFront(
+            $queryString
+        )->paginate(10)->through(function ($product) {
             $productID = intval($product->id);
             $imagesProducts =  $this->productsImagesInstance->getImagesProduct($productID);
             $product['thumbnail-image'] =   env('APP_URL') . "/" . str_replace("public", "storage", $imagesProducts[0]);
             return $product;
-        });
+        });;
     }
 }

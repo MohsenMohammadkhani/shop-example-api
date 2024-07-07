@@ -39,7 +39,7 @@ class ProductController extends BaseController
         }
     }
 
-    public function getAllProductSlug()
+    public function getAllProductSlug(Request $request)
     {
         try {
             $productsSlug =  Product::select('slug')->paginate(10);

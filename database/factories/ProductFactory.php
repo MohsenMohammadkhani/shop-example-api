@@ -26,7 +26,9 @@ class ProductFactory extends Factory
         return [
             'title' => "title-" . self::$order,
             'slug' => "slug-" . self::$order,
-            'price' => rand(pow(10, 4), pow(10, 5))
+            'price' => rand(pow(10, 4), pow(10, 5)),
+            'is_exist' => 1,
+            'description' => "لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید",
         ];
     }
 }

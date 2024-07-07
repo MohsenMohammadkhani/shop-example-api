@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    
+
     protected $guarded = ['id'];
     protected $table = 'products';
     protected $connection = 'mysql';
@@ -22,7 +22,20 @@ class Product extends Model
 
         if ($queryString->has('title')) {
             $query->where('title', 'like', '%' . $queryString->get('title') . '%');
-        } 
+        }
+
+        return $query;
+    }
+
+    public function scopeFilterByQueryStringShopPageFront($query, $queryString)
+    {
+        if ($queryString->has('title')) {
+            $query->where('title', 'like', '%' . $queryString->get('title') . '%');
+        }
+
+        if ($queryString->has('price_from')) {
+            $query->whereBetween('price', [$queryString->get('price_from'), $queryString->get('price_to')]);
+        }
 
         return $query;
     }
