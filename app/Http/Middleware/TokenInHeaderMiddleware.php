@@ -31,7 +31,6 @@ class TokenInHeaderMiddleware
 
             return $next($request);
         } catch (\Exception $error) {
-            dd('333');
             return response()->json([
                 'message' => $error->getMessage(),
             ], 500);

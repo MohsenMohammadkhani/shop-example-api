@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Auth\role;
+namespace App\Http\Requests\Dashboard\Auth\role;
 
 use App\Http\Requests\BaseRequests;
 use Illuminate\Contracts\Validation\Validator;

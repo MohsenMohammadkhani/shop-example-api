@@ -18,16 +18,16 @@ class PermissionMiddleware
     public function handle(Request $request, Closure $next, string $permissionName)
     {
         try {
-          
+
             if (!$request->header('Authorization')) {
                 return response()->json([
                     'message' => __('auth.authorization_is_not_exist_on_request_header'),
                 ], 401);
             }
-            
+
             $jwtToken = (str_replace("Bearer ", "", $request->header('Authorization')));
             $userPermissions = JWTToken::decode($jwtToken)->permissions;
-    
+
             if (!in_array($permissionName, $userPermissions)) {
                 return response()->json([
                     'message' => __('auth.you_do_not_have_require_permission'),

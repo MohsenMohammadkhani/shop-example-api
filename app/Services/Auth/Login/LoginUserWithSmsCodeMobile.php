@@ -34,6 +34,17 @@ class LoginUserWithSmsCodeMobile
         $user->notify(new SendSmsLoginToDashboard($mobilesNumber, $loginCode));
     }
 
+    public function loginShop(string $mobileNumber, string $smsCode){
+        $user = User::where('mobile_number', $mobileNumber)->first();
+        if (!$user) {
+            throw new \Exception(__('auth.user_with_this_mobile_number_is_not_exist'));
+        }
+        if ($user->login_code != $smsCode) {
+            throw new \Exception(__('auth.sms_code_for_login_user_is_invalid'));
+        }
+        dd($user);
+    }
+
     public function login(string $mobileNumber, string $smsCode): string
     {
         $user = User::where('mobile_number', $mobileNumber)->first();

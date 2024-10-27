@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Dashboard\Auth;
 
 use App\Http\Controllers\BaseController;
-use App\Http\Requests\Auth\role\AddRoleRequest;
-use App\Http\Requests\Auth\role\EditRoleRequest;
+use App\Http\Requests\Dashboard\Auth\role\AddRoleRequest;
+use App\Http\Requests\Dashboard\Auth\role\EditRoleRequest;
 use App\Http\Resources\Dashboard\auth\RoleResourceCollection;
 use App\Models\Role;
 use Illuminate\Http\JsonResponse;

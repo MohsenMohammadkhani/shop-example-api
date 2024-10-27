@@ -1,22 +1,25 @@
 const fs = require("fs");
 let swagger = require("./init.json");
-const user = require("./auth.json");
+const auth = require("./auth.json");
 const permission = require("./permission.json");
 const role = require("./role.json");
 const product = require("./product.json");
+const user = require("./user.json");
 
 swagger["paths"] = {
-    ...user.paths,
+    ...auth.paths,
     ...permission.paths,
     ...role.paths,
     ...product.paths,
+    ...user.paths,
 };
 
 swagger["definitions"] = {
-    ...user.definitions,
+    ...auth.definitions,
     ...permission.definitions,
     ...role.definitions,
     ...product.definitions,
+    ...user.definitions,
 };
 
 fs.writeFile(

@@ -29,12 +29,24 @@ Route::prefix('v1')->group(function () {
             Route::resource("permission", "PermissionController")->middleware('permission:manage-permissions');
         });
 
+        Route::prefix("user")->group(function () {
+            Route::get("get-info", "UserController@getUserInfo")->middleware('permission:buy-product');
+            Route::post("fill-info", "UserController@fillUserInfo")->middleware('permission:buy-product');
+        });
+
         Route::resource("product", "ProductController")->middleware('permission:manage-products');
     });
 
     Route::prefix("shop")->namespace("Shop")->group(function () {
+
         Route::get("/products", "ProductController@getListProduct");
         Route::get("/products/all-products-slug", "ProductController@getAllProductSlug");
         Route::get("/products/{slug}", "ProductController@show");
+
+
+        Route::get("/auth/login-with-sms-code", "LoginController@loginWithSmsCode");
+        
+        Route::post("/order", "OrderController@store")->middleware('permission:buy-product');;
+
     });
 });
